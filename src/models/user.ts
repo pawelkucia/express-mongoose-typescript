@@ -24,13 +24,13 @@ const userSchema = new Schema<IUser>({
     },
     email: {
         type: String,
-        unique: true, // nie zadziałało
+        unique: true, // not working
         lowercase: true
     }
 });
 
 userSchema.pre('save', function (next: Function) {
-    console.log('just before save');
+    console.log('testing just before save');
     // this.name += ' add postfix';
 
     next();
